@@ -18,4 +18,16 @@
     android:layout_height="wrap_content"
     android:text="BinderHook"
     />
+<Button
+    android:id="@+id/btn_control_3"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="AMSPMS"
+    />
+<Button
+    android:id="@+id/btn_control_4"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="INTERCEPTACTIVITY"
+    />
 </LinearLayout>

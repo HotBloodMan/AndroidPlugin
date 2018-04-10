@@ -6,8 +6,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.ljt.androidplugin.amspms.AmsPmsActivity;
 import com.ljt.androidplugin.binder.BinderActivity;
 import com.ljt.androidplugin.hook.MainActivity;
+import com.ljt.androidplugin.interceptactivity.InterceptActivity;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -18,6 +20,10 @@ public class MainControlActivity extends AppCompatActivity implements View.OnCli
     Button btnHook;
     @InjectView(R.id.btn_control_2)
     Button btnHookBind;
+    @InjectView(R.id.btn_control_3)
+    Button btnHookAmsPms;
+    @InjectView(R.id.btn_control_4)
+    Button btnInterceptActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +32,9 @@ public class MainControlActivity extends AppCompatActivity implements View.OnCli
         ButterKnife.inject(this);
         btnHook.setOnClickListener(this);
         btnHookBind.setOnClickListener(this);
+        btnHookAmsPms.setOnClickListener(this);
+        btnInterceptActivity.setOnClickListener(this);
+
     }
 
     @Override
@@ -36,6 +45,12 @@ public class MainControlActivity extends AppCompatActivity implements View.OnCli
                 break;
             case R.id.btn_control_2:
                 startActivitys(BinderActivity.class);
+                break;
+            case R.id.btn_control_3:
+                startActivitys(AmsPmsActivity.class);
+                break;
+            case R.id.btn_control_4:
+                startActivitys(InterceptActivity.class);
                 break;
         }
     }
