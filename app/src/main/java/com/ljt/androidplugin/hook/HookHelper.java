@@ -16,15 +16,17 @@ public class HookHelper {
         Log.d(TAG,"--------->>>>attachContext");
         Class<?> activityThreadClass = Class.forName("android.app.ActivityThread");
         Method currentActivityThreadMethod = activityThreadClass.getDeclaredMethod("currentActivityThread");
+        Log.d(TAG,"--->>>method= "+currentActivityThreadMethod.getName().toString());
         currentActivityThreadMethod.setAccessible(true);
+        Object currentActivityThread = currentActivityThreadMethod.invoke(null);
 
-        Object currentActivityThread=currentActivityThreadMethod.invoke(null);
         Field mInstrumentationField = activityThreadClass.getDeclaredField("mInstrumentation");
         mInstrumentationField.setAccessible(true);
-        Instrumentation mInstrumentation= (Instrumentation) mInstrumentationField.get(currentActivityThread);
-      // 创建代理对象
-        Instrumentation myInstrumentation = new MyInstrumentation(mInstrumentation);
-        // 偷梁换柱
-       mInstrumentationField.set(currentActivityThread,myInstrumentation);
+        Instrumentation mInstrumentation = (Instrumentation) mInstrumentationField.get(currentActivityThread);
+
+        //创建代理对象
+        MyInstrumentation myInstrumentation = new MyInstrumentation(mInstrumentation);
+        mInstrumentationField.set(currentActivityThread,myInstrumentation);
+
     }
 }

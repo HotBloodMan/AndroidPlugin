@@ -36,10 +36,11 @@ public class MainActivity extends Activity {
     @Override
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(newBase);
-        Log.d(TAG,"------>>>> attachBaseContext()");
+        Log.d(TAG,"------>>>> attachBaseContext() begin");
         try {
             //在这里进行Hook
             HookHelper.attachContext();
+        Log.d(TAG,"------>>>> attachBaseContext() over");
         }catch (Exception e){
             e.printStackTrace();
         }
