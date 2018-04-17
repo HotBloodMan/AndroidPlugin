@@ -10,6 +10,7 @@ import com.ljt.androidplugin.amspms.AmsPmsActivity;
 import com.ljt.androidplugin.binder.BinderActivity;
 import com.ljt.androidplugin.hook.MainActivity;
 import com.ljt.androidplugin.interceptactivity.InterceptActivity;
+import com.ljt.androidplugin.testmakejar.MakeJarActivity;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -24,6 +25,8 @@ public class MainControlActivity extends AppCompatActivity implements View.OnCli
     Button btnHookAmsPms;
     @InjectView(R.id.btn_control_4)
     Button btnInterceptActivity;
+    @InjectView(R.id.btn_control_5)
+    Button btnMakeJar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +37,7 @@ public class MainControlActivity extends AppCompatActivity implements View.OnCli
         btnHookBind.setOnClickListener(this);
         btnHookAmsPms.setOnClickListener(this);
         btnInterceptActivity.setOnClickListener(this);
-
+        btnMakeJar.setOnClickListener(this);
     }
 
     @Override
@@ -51,6 +54,9 @@ public class MainControlActivity extends AppCompatActivity implements View.OnCli
                 break;
             case R.id.btn_control_4:
                 startActivitys(InterceptActivity.class);
+                break;
+            case R.id.btn_control_5:
+                startActivitys(MakeJarActivity.class);
                 break;
         }
     }

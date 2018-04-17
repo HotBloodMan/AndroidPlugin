@@ -22,7 +22,8 @@
 
         <!-- 假Activity -->
         <activity android:name=".interceptactivity.FakeActivity" />
-        <!--<activity android:name=".interceptactivity.TargetActivity"></activity>-->
+        <!-- <activity android:name=".interceptactivity.TargetActivity"></activity> -->
+        <activity android:name=".testmakejar.MakeJarActivity"></activity>
     </application>
 
 </manifest>

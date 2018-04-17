@@ -30,4 +30,10 @@
     android:layout_height="wrap_content"
     android:text="INTERCEPTACTIVITY"
     />
+<Button
+    android:id="@+id/btn_control_5"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="MakeJar"
+    />
 </LinearLayout>
